@@ -54,3 +54,10 @@ We will evaluate the code and time spent
 3. Send a Pull Request using Github interface
 
 Good luck! :)
+
+
+
+
+## Worklog
+
+- 9:15~9:30 - Assignment reading, git fork, clone
