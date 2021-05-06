@@ -65,4 +65,4 @@ Good luck! :)
 - 23:00~0:45 - Understanding the reddit api (What a mess...)) / Base project initialization / Added Moya to abstract the network layer / Created the base models for listing
 
 ### 5/5
-- 21:45 - Added Resolver for dependency injection
+- 21:45~22:30 - Added Resolver for dependency injection / Adds coordinator for app, reddit list and detail
