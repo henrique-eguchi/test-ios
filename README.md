@@ -66,3 +66,6 @@ Good luck! :)
 
 ### 5/5
 - 21:45~22:30 - Added Resolver for dependency injection / Adds coordinator for app, reddit list and detail
+
+### 5/6
+- 00:00~00:20 - Created loading and reddit children table view cell
