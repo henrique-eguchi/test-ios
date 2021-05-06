@@ -4,19 +4,23 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - Resolver (1.4.1)
 
 DEPENDENCIES:
   - Moya
+  - Resolver
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
+    - Resolver
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Resolver: c293d0177cbc69fcb700cfd49922ae2122c1829c
 
-PODFILE CHECKSUM: 314a6d566fc367853c2d2b6c418530d03aaf6f9a
+PODFILE CHECKSUM: 123f378cfe904db71ec838620aa222556cb6db61
 
 COCOAPODS: 1.8.4

@@ -8,6 +8,7 @@ target 'ios-reddit-challenge' do
   # Pods for ios-reddit-challenge
 
   pod 'Moya'
+  pod 'Resolver'
 
   target 'ios-reddit-challengeTests' do
     inherit! :search_paths

@@ -60,5 +60,9 @@ Good luck! :)
 
 ## Worklog
 
-- 9:15~9:30 - Assignment reading, git fork, clone
-- 11:00~0:45 - Understanding the reddit api (What a mess...)) / Base project initialization / Added Moya to abstract the network layer / Created the base models for listing
+### 5/4
+- 21:15~21:30 - Assignment reading, git fork, clone
+- 23:00~0:45 - Understanding the reddit api (What a mess...)) / Base project initialization / Added Moya to abstract the network layer / Created the base models for listing
+
+### 5/5
+- 21:45 - Added Resolver for dependency injection

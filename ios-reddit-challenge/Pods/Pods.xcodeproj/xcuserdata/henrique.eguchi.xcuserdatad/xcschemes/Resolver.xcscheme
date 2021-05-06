@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D7590C8E313ACC10A981EF59F6BE62E"
-               BuildableName = "Pods-ios-reddit-challenge.framework"
-               BlueprintName = "Pods-ios-reddit-challenge"
+               BlueprintIdentifier = "3AF1A4FE1808CDAE51281F7A31DB2A13"
+               BuildableName = "Resolver.framework"
+               BlueprintName = "Resolver"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
