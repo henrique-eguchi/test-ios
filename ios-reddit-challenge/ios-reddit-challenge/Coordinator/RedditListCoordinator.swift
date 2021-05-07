@@ -18,13 +18,21 @@ class RedditListCoordinator: Coordinator {
     
     func start() {
         let redditListViewController = RedditListViewController.instantiate()
+
+        let redditTopEntriesListViewModel = RedditTopEntriesListViewModel(networkManager: RedditNetworkManager())
+        redditTopEntriesListViewModel.topEntriesFetchingDelegate = redditListViewController
         
-        // TODO: - Setup viewmodel
-        
-        // TODO: - setup delegates
+        redditTopEntriesListViewModel.topEntriesNavigationDelegate = self
 
         self.redditListViewController = redditListViewController
         navigationController.pushViewController(redditListViewController, animated: true)
+    }
+}
+
+extension RedditListCoordinator: TopEntriesNavigationDelegate {
+    func entrySelected(_ entry: RedditChildren) {
+        let redditDetailCoordinator = RedditDetailCoordinator(navigationController: navigationController)
+        redditDetailCoordinator.start()
     }
     
     

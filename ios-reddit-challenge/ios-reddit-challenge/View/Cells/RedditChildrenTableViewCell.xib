@@ -42,6 +42,9 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SeV-Mb-of6">
                         <rect key="frame" x="8" y="59.333333333333329" width="291" height="140.66666666666669"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="z1H-Rv-TpS"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>

@@ -21,7 +21,7 @@ class RedditDetailCoordinator: Coordinator {
         
         // TODO: - Setup viewmodel
         
-        // TODO: - setup delegates
+        // TODO: - Setup delegates
 
         self.redditDetailViewController = redditDetailViewController
         navigationController.pushViewController(redditDetailViewController, animated: true)

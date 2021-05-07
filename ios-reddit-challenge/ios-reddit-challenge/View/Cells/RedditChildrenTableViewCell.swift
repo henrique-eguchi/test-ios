@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RedditChildrenTableViewCell: UITableViewCell {
 
@@ -15,12 +16,24 @@ class RedditChildrenTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var commentCountLabel: UILabel!
 
+    var topEntryViewModel: TopEntryCellViewModel?
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    func configure() {
+        guard let topEntryViewModel = topEntryViewModel else { return }
+        
+        authorLabel.text = topEntryViewModel.author
+        createdLabel.text = topEntryViewModel.entryDate
+        titleLabel.text = topEntryViewModel.title
+        thumbnailImageView.kf.setImage(with: topEntryViewModel.thumbnail)
+        commentCountLabel.text = "💬 \(topEntryViewModel.commentsCount)"
     }
     
 }

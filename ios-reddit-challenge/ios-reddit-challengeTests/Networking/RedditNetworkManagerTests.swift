@@ -15,10 +15,10 @@ class RedditNetworkManagerTests: XCTestCase {
         let sut = RedditNetworkManager()
         sut.provider = MoyaProvider<RedditAPI>(stubClosure: MoyaProvider.immediatelyStub, plugins: [NetworkLoggerPlugin()])
         
-        sut.listTopEntries(count: 0, limit: 25) { result in
+        sut.listTopEntries(offset: 0, limit: 10) { result in
             switch result {
             case .success(let redditList):
-                XCTAssertEqual(redditList.entries[0].title, "STUB - Welcome to the Ocean")
+                XCTAssertEqual(redditList.entries[0].title, "STUB - I’ve found a few funny memories during lockdown. This is from my 1st tour in 89, backstage in Vegas.")
             case .failure(_):
                 XCTFail("Entries fetch failed!")
             }

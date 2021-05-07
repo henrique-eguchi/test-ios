@@ -8,7 +8,7 @@
 import Moya
 
 enum RedditAPI {
-    case top(count: Int, limit: Int, _ time: String = "all", _ show: String = "all")
+    case top(offset: Int, limit: Int, _ time: String = "all", _ show: String = "all")
 }
 
 extension RedditAPI: TargetType {
@@ -17,7 +17,7 @@ extension RedditAPI: TargetType {
     
     var path: String {
         switch self {
-        case .top(_, _, _, _):
+        case .top:
             return "/top"
         }
     }
@@ -42,8 +42,8 @@ extension RedditAPI: TargetType {
     
     var task: Task {
         switch self {
-        case let .top(time, count, limit, show):
-            return .requestParameters(parameters: ["t": time, "count": count, "limit": limit, "show": show], encoding: URLEncoding.queryString)
+        case let .top(offset, limit, time, show):
+            return .requestParameters(parameters: ["t": time, "count": offset, "limit": limit, "show": show], encoding: URLEncoding.queryString)
         }
     }
     

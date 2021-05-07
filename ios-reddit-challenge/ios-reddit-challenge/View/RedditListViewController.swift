@@ -9,9 +9,23 @@ import UIKit
 
 class RedditListViewController: UIViewController, Storyboarded {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
+
+    var viewModel: RedditTopEntriesListViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension RedditListViewController: TopEntriesFetchingDelegate {
+    func fetchSuccess() {
+        tableView.reloadData()
+    }
+    
+    func fetchFailure() {
+        // TODO: - Failure / Alert
     }
 }

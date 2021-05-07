@@ -38,16 +38,6 @@
                ReferencedContainer = "container:ios-reddit-challenge.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1F6435A92642471D00A99CA8"
-               BuildableName = "ios-reddit-challengeUITests.xctest"
-               BlueprintName = "ios-reddit-challengeUITests"
-               ReferencedContainer = "container:ios-reddit-challenge.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
