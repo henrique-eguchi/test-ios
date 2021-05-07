@@ -9,9 +9,9 @@ import UIKit
 
 class RedditListViewController: UIViewController, Storyboarded {
 
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }

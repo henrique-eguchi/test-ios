@@ -8,12 +8,12 @@
 import Foundation
 
 struct RedditList {
-    var posts = [RedditChildren]()
+    var entries = [RedditChildren]()
 }
 
 extension RedditList: Decodable {
     enum CodingKeys: String, CodingKey {
-        case posts = "children"
+        case entries = "children"
         case data
     }
     
@@ -21,6 +21,6 @@ extension RedditList: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let data = try values.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         
-        posts = try data.decode([RedditChildren].self, forKey: .posts)
+        entries = try data.decode([RedditChildren].self, forKey: .entries)
     }
 }

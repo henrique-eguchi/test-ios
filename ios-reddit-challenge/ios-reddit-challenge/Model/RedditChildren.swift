@@ -7,16 +7,32 @@
 
 import Foundation
 
-struct RedditChildren: Codable {
-    let title, author: String
+struct RedditChildren {
+    let id, title, author: String
     let thumbnail: String
     let commentsCount: Int
     let entryDate: Int
+}
 
+extension RedditChildren: Decodable {
     enum CodingKeys: String, CodingKey {
-        case title, author
+        case id, title, author
         case thumbnail
         case commentsCount = "num_comments"
         case entryDate = "created"
+
+        case data
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let dataContainer = try values.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
+
+        id = try dataContainer.decode(String.self, forKey: .id)
+        title = try dataContainer.decode(String.self, forKey: .title)
+        author = try dataContainer.decode(String.self, forKey: .author)
+        thumbnail = try dataContainer.decode(String.self, forKey: .thumbnail)
+        commentsCount = try dataContainer.decode(Int.self, forKey: .commentsCount)
+        entryDate = try dataContainer.decode(Int.self, forKey: .entryDate)
     }
 }
