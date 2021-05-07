@@ -69,3 +69,6 @@ Good luck! :)
 
 ### 5/6
 - 00:00~00:20 - Created loading and reddit children table view cell
+
+### 5/7
+- 01:30~02:15 - Fixed model / Created the RedditNetworkManager and added operations for top entries listing as well as its unit tests
