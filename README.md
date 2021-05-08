@@ -75,5 +75,7 @@ Good luck! :)
 - 05:00~06:50 - Installs Kingfisher / Creates ListViewModel / Naming adjusts / Changes coordinator / Creates VM unit tests and adjusts some on Manager / Changes mock json (10 entries)
 - 21:30~23:00 - Creates List View Controller / Fixes pagination implementation / Includes Pull to refresh / Changes listing TableViewCell / Fixes unit tests
 
+## 5/8
+- 02:30~3:15 - Created Detail VC, VM, Coordinator and Views / Fixed some bugs
 
-### Total: 7h 10m
+### Total: 7h 55m
