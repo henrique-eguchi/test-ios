@@ -8,7 +8,7 @@ target 'ios-reddit-challenge' do
   # Pods for ios-reddit-challenge
 
   pod 'Moya'
-  pod 'Resolver'
+  # pod 'Resolver'
   pod 'Kingfisher'
 
   target 'ios-reddit-challengeTests' do
