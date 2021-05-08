@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class RedditListViewController: UIViewController, Storyboarded {
 

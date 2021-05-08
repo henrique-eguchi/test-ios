@@ -9,7 +9,7 @@ target 'ios-reddit-challenge' do
 
   pod 'Moya'
   # pod 'Resolver'
-  pod 'Kingfisher'
+  # pod 'Kingfisher'
 
   target 'ios-reddit-challengeTests' do
     inherit! :search_paths
