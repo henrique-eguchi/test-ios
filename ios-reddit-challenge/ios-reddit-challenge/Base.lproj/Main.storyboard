@@ -46,29 +46,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-Yr-xL5">
-                                <rect key="frame" x="72" y="120" width="31" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Ups" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-Yr-xL5">
+                                <rect key="frame" x="8" y="52" width="292" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Up vote ratio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph9-hu-LVT">
-                                <rect key="frame" x="250" y="119" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Up vote ratio" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph9-hu-LVT">
+                                <rect key="frame" x="308" y="52" width="98" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFg-j4-F9k">
-                                <rect key="frame" x="153" y="231" width="108" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show on Reddit"/>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-not-found" translatesAutoresizingMaskIntoConstraints="NO" id="mlT-ob-a8W">
+                                <rect key="frame" x="8" y="81" width="398" height="773"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="moo-fq-2Af"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mlT-ob-a8W" firstAttribute="top" secondItem="Ph9-hu-LVT" secondAttribute="bottom" constant="8" id="52Q-1U-vve"/>
+                            <constraint firstItem="moo-fq-2Af" firstAttribute="trailing" secondItem="Ph9-hu-LVT" secondAttribute="trailing" constant="8" id="BhL-ml-cIz"/>
+                            <constraint firstItem="kUG-Yr-xL5" firstAttribute="leading" secondItem="moo-fq-2Af" secondAttribute="leading" constant="8" id="HIG-CA-dxU"/>
+                            <constraint firstItem="kUG-Yr-xL5" firstAttribute="top" secondItem="moo-fq-2Af" secondAttribute="top" constant="8" id="Kt9-yP-vEX"/>
+                            <constraint firstItem="mlT-ob-a8W" firstAttribute="leading" secondItem="moo-fq-2Af" secondAttribute="leading" constant="8" id="N03-vI-Oqp"/>
+                            <constraint firstItem="Ph9-hu-LVT" firstAttribute="leading" secondItem="kUG-Yr-xL5" secondAttribute="trailing" constant="8" id="UC0-lU-vw9"/>
+                            <constraint firstItem="mlT-ob-a8W" firstAttribute="top" secondItem="kUG-Yr-xL5" secondAttribute="bottom" constant="8" id="VAp-6h-Mxm"/>
+                            <constraint firstItem="moo-fq-2Af" firstAttribute="bottom" secondItem="mlT-ob-a8W" secondAttribute="bottom" constant="8" id="fdK-n2-CHo"/>
+                            <constraint firstItem="Ph9-hu-LVT" firstAttribute="top" secondItem="moo-fq-2Af" secondAttribute="top" constant="8" id="miP-VW-50z"/>
+                            <constraint firstItem="moo-fq-2Af" firstAttribute="trailing" secondItem="mlT-ob-a8W" secondAttribute="trailing" constant="8" id="pJv-kg-jdy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="thumbnailImageView" destination="mlT-ob-a8W" id="lPG-KT-3Jz"/>
+                        <outlet property="upLabel" destination="kUG-Yr-xL5" id="iJi-Ck-pgq"/>
+                        <outlet property="upVoteRatioLabel" destination="Ph9-hu-LVT" id="oJY-Cr-ihd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5O-29-jC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,6 +89,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image-not-found" width="217" height="232"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

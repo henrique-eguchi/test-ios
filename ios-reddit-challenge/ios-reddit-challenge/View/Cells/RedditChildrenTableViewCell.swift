@@ -21,8 +21,6 @@ class RedditChildrenTableViewCell: UITableViewCell {
     
     var topEntryViewModel: TopEntryCellViewModel?
 
-    let kZeroHeight: CGFloat = 0
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -37,18 +35,11 @@ class RedditChildrenTableViewCell: UITableViewCell {
         authorLabel.text = topEntryViewModel.author
         createdLabel.text = topEntryViewModel.entryDate
         titleLabel.text = topEntryViewModel.title
-            
-        thumbnailImageView.kf.setImage(with: topEntryViewModel.thumbnail) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let retrieveImageResult):
-                let imageSize = retrieveImageResult.image.size
-                self.thumbnailImageViewHeightConstraint.constant = imageSize.height
-            case .failure(_):
-                self.thumbnailImageViewHeightConstraint.constant = self.kZeroHeight
-            }
-        }
         commentCountLabel.text = "💬 \(topEntryViewModel.commentsCount)"
+        
+        if let thumbnailImageURL = topEntryViewModel.thumbnail {
+            thumbnailImageView.imageFromURL(thumbnailImageURL)
+        }
     }
     
 }

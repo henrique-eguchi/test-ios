@@ -36,7 +36,7 @@ class RedditListCoordinator: Coordinator {
 
 extension RedditListCoordinator: TopEntriesNavigationDelegate {
     func entrySelected(_ entry: RedditChildren) {
-        let redditDetailCoordinator = RedditDetailCoordinator(navigationController: navigationController)
+        let redditDetailCoordinator = RedditDetailCoordinator(navigationController: navigationController, redditChildren: entry)
         redditDetailCoordinator.start()
     }
     

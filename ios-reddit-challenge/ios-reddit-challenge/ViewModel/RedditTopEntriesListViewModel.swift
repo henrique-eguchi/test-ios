@@ -64,7 +64,8 @@ class RedditTopEntriesListViewModel {
         entries.count
     }
 
-    func viewModelForItemAt(indexPath: IndexPath) -> TopEntryCellViewModel {
+    func viewModelForItemAt(indexPath: IndexPath) -> TopEntryCellViewModel? {
+        guard entries.count > indexPath.row else { return nil }
         let entry = entries[indexPath.row]
         return TopEntryCellViewModel(for: entry)
     }

@@ -11,21 +11,20 @@ class RedditDetailCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     private var redditDetailViewController: RedditDetailViewController?
+    private let redditChildren: RedditChildren
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController,
+         redditChildren: RedditChildren) {
         self.navigationController = navigationController
+        self.redditChildren = redditChildren
     }
     
     func start() {
         let redditDetailViewController = RedditDetailViewController.instantiate()
-        
-        // TODO: - Setup viewmodel
-        
-        // TODO: - Setup delegates
+        redditDetailViewController.title = "Details"
+        redditDetailViewController.viewModel = RedditDetailViewModel(redditChildren: redditChildren)
 
         self.redditDetailViewController = redditDetailViewController
         navigationController.pushViewController(redditDetailViewController, animated: true)
     }
-    
-    
 }

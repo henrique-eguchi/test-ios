@@ -12,6 +12,9 @@ struct RedditChildren {
     let thumbnail: URL?
     let commentsCount: Int
     let entryDate: Double
+    
+    let ups: Int
+    let upVoteRatio: Double
 }
 
 extension RedditChildren: Decodable {
@@ -20,7 +23,8 @@ extension RedditChildren: Decodable {
         case thumbnail
         case commentsCount = "num_comments"
         case entryDate = "created"
-
+        case ups
+        case upVoteRatio = "upvote_ratio"
         case data
     }
 
@@ -34,5 +38,7 @@ extension RedditChildren: Decodable {
         thumbnail = try dataContainer.decode(URL.self, forKey: .thumbnail)
         commentsCount = try dataContainer.decode(Int.self, forKey: .commentsCount)
         entryDate = try dataContainer.decode(Double.self, forKey: .entryDate)
+        ups = try dataContainer.decode(Int.self, forKey: .ups)
+        upVoteRatio = try dataContainer.decode(Double.self, forKey: .upVoteRatio)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RedditListViewController: UIViewController, Storyboarded {
 
@@ -82,7 +83,8 @@ extension RedditListViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: RedditChildrenTableViewCell.cellIdentifier, for: indexPath) as? RedditChildrenTableViewCell else {
                 return UITableViewCell()
             }
-            cell.topEntryViewModel = viewModel?.viewModelForItemAt(indexPath: indexPath)
+            guard let viewModel = viewModel?.viewModelForItemAt(indexPath: indexPath) else { return UITableViewCell() }
+            cell.topEntryViewModel = viewModel
             cell.configure()
             return cell
         } else {
