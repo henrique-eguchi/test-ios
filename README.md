@@ -54,3 +54,28 @@ We will evaluate the code and time spent
 3. Send a Pull Request using Github interface
 
 Good luck! :)
+
+
+
+
+## Worklog
+
+### 5/4
+- 21:15~21:30 - Assignment reading, git fork, clone
+- 23:00~0:45 - Understanding the reddit api (What a mess...)) / Base project initialization / Added Moya to abstract the network layer / Created the base models for listing
+
+### 5/5
+- 21:45~22:30 - Added Resolver for dependency injection / Adds coordinator for app, reddit list and detail
+
+### 5/6
+- 00:00~00:20 - Created loading and reddit children table view cell
+
+### 5/7
+- 01:30~02:15 - Fixed model / Created the RedditNetworkManager and added operations for top entries listing as well as its unit tests
+- 05:00~06:50 - Installs Kingfisher / Creates ListViewModel / Naming adjusts / Changes coordinator / Creates VM unit tests and adjusts some on Manager / Changes mock json (10 entries)
+- 21:30~23:00 - Creates List View Controller / Fixes pagination implementation / Includes Pull to refresh / Changes listing TableViewCell / Fixes unit tests
+
+## 5/8
+- 02:30~3:15 - Created Detail VC, VM, Coordinator and Views / Fixed some bugs
+
+### Total: 7h 55m

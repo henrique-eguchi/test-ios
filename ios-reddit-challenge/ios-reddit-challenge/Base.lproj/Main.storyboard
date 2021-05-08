@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reddit List View Controller-->
+        <scene sceneID="ahO-wX-dhY">
+            <objects>
+                <viewController storyboardIdentifier="RedditListViewController" id="U4e-ox-TD6" customClass="RedditListViewController" customModule="ios_reddit_challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RkO-ve-nIy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-59-N11">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tXf-cs-RuE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cf9-59-N11" firstAttribute="leading" secondItem="tXf-cs-RuE" secondAttribute="leading" id="Ui5-Al-2wk"/>
+                            <constraint firstItem="cf9-59-N11" firstAttribute="top" secondItem="tXf-cs-RuE" secondAttribute="top" id="ZZ0-6M-0uu"/>
+                            <constraint firstItem="tXf-cs-RuE" firstAttribute="bottom" secondItem="cf9-59-N11" secondAttribute="bottom" id="cqu-Lu-sj6"/>
+                            <constraint firstItem="tXf-cs-RuE" firstAttribute="trailing" secondItem="cf9-59-N11" secondAttribute="trailing" id="vMA-MR-nC7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="cf9-59-N11" id="ZuI-y4-nDN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4i-KT-3Qm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="115"/>
+        </scene>
+        <!--Reddit Detail View Controller-->
+        <scene sceneID="jkm-Y2-PPR">
+            <objects>
+                <viewController storyboardIdentifier="RedditDetailViewController" id="2h2-DK-FXM" customClass="RedditDetailViewController" customModule="ios_reddit_challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hlA-0Y-253">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Ups" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-Yr-xL5">
+                                <rect key="frame" x="8" y="52" width="292" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Up vote ratio" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph9-hu-LVT">
+                                <rect key="frame" x="308" y="52" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-not-found" translatesAutoresizingMaskIntoConstraints="NO" id="mlT-ob-a8W">
+                                <rect key="frame" x="8" y="81" width="398" height="773"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="moo-fq-2Af"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mlT-ob-a8W" firstAttribute="top" secondItem="Ph9-hu-LVT" secondAttribute="bottom" constant="8" id="52Q-1U-vve"/>
+                            <constraint firstItem="moo-fq-2Af" firstAttribute="trailing" secondItem="Ph9-hu-LVT" secondAttribute="trailing" constant="8" id="BhL-ml-cIz"/>
+                            <constraint firstItem="kUG-Yr-xL5" firstAttribute="leading" secondItem="moo-fq-2Af" secondAttribute="leading" constant="8" id="HIG-CA-dxU"/>
+                            <constraint firstItem="kUG-Yr-xL5" firstAttribute="top" secondItem="moo-fq-2Af" secondAttribute="top" constant="8" id="Kt9-yP-vEX"/>
+                            <constraint firstItem="mlT-ob-a8W" firstAttribute="leading" secondItem="moo-fq-2Af" secondAttribute="leading" constant="8" id="N03-vI-Oqp"/>
+                            <constraint firstItem="Ph9-hu-LVT" firstAttribute="leading" secondItem="kUG-Yr-xL5" secondAttribute="trailing" constant="8" id="UC0-lU-vw9"/>
+                            <constraint firstItem="mlT-ob-a8W" firstAttribute="top" secondItem="kUG-Yr-xL5" secondAttribute="bottom" constant="8" id="VAp-6h-Mxm"/>
+                            <constraint firstItem="moo-fq-2Af" firstAttribute="bottom" secondItem="mlT-ob-a8W" secondAttribute="bottom" constant="8" id="fdK-n2-CHo"/>
+                            <constraint firstItem="Ph9-hu-LVT" firstAttribute="top" secondItem="moo-fq-2Af" secondAttribute="top" constant="8" id="miP-VW-50z"/>
+                            <constraint firstItem="moo-fq-2Af" firstAttribute="trailing" secondItem="mlT-ob-a8W" secondAttribute="trailing" constant="8" id="pJv-kg-jdy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="thumbnailImageView" destination="mlT-ob-a8W" id="lPG-KT-3Jz"/>
+                        <outlet property="upLabel" destination="kUG-Yr-xL5" id="iJi-Ck-pgq"/>
+                        <outlet property="upVoteRatioLabel" destination="Ph9-hu-LVT" id="oJY-Cr-ihd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F5O-29-jC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="115"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image-not-found" width="217" height="232"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
