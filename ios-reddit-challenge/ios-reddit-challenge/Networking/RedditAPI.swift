@@ -8,7 +8,7 @@
 import Moya
 
 enum RedditAPI {
-    case top(offset: Int, limit: Int, _ time: String = "all", _ show: String = "all")
+    case top(limit: Int, after: String, offset: Int?, _ time: String = "all", _ show: String = "all")
 }
 
 extension RedditAPI: TargetType {
@@ -42,8 +42,18 @@ extension RedditAPI: TargetType {
     
     var task: Task {
         switch self {
-        case let .top(offset, limit, time, show):
-            return .requestParameters(parameters: ["t": time, "count": offset, "limit": limit, "show": show], encoding: URLEncoding.queryString)
+        case let .top(limit, after, offset, time, show):
+            let initialParameters: [String: Any] = ["t": time, "limit": limit, "after": after, "show": show]
+
+            if let unwrappedOffset = offset {
+                let optionalParameters: [String: Any] = ["count": unwrappedOffset]
+                let mergedDictionary = initialParameters.merging(optionalParameters) { _, new in new }
+                return .requestParameters(parameters: mergedDictionary,
+                                          encoding: URLEncoding.queryString)
+            }
+            
+            return .requestParameters(parameters: initialParameters,
+                                      encoding: URLEncoding.queryString)
         }
     }
     

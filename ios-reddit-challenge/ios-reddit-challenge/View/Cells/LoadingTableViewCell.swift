@@ -11,6 +11,8 @@ class LoadingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var loadingSign: UIActivityIndicatorView!
 
+    static let cellIdentifier = "LoadingItemCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

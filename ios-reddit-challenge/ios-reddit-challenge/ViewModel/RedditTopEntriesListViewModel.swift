@@ -20,7 +20,8 @@ class RedditTopEntriesListViewModel {
     private let kDefaultPageLimit = 10
     private let kMaxEntries = 50
     private var offset = 0
-    private var isFetching = false
+    private var after = String()
+    public var isFetching = false
 
     private var entries: [RedditChildren]
     private var networkManager: RedditNetworkManager
@@ -35,17 +36,19 @@ class RedditTopEntriesListViewModel {
     
     func fetchTopEntries() {
         guard !isFetching && offset < kMaxEntries else { return }
-        
+
         isFetching = true
+        let optionalOffset: Int? = offset == 0 ? nil : offset
         
-        networkManager.listTopEntries(offset: offset, limit: kDefaultPageLimit) { [weak self] result in
+        networkManager.listTopEntries(limit: kDefaultPageLimit, after: after, offset: optionalOffset) { [weak self] result in
             guard let self = self else { return }
 
             self.isFetching = false
 
             switch result {
             case .success(let response):
-                self.offset += self.kDefaultPageLimit
+                self.offset += response.entries.count
+                self.after = response.after ?? String()
                 self.entries.append(contentsOf: response.entries)
                 DispatchQueue.main.async {
                     self.topEntriesFetchingDelegate?.fetchSuccess()
@@ -69,5 +72,12 @@ class RedditTopEntriesListViewModel {
     func showEntryDetailsAt(indexPath: IndexPath) {
         let entry = entries[indexPath.row]
         topEntriesNavigationDelegate?.entrySelected(entry)
+    }
+
+    func resetPagination() {
+        offset = 0
+        after = String()
+        isFetching = false
+        entries = []
     }
 }

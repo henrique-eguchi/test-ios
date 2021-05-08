@@ -73,3 +73,7 @@ Good luck! :)
 ### 5/7
 - 01:30~02:15 - Fixed model / Created the RedditNetworkManager and added operations for top entries listing as well as its unit tests
 - 05:00~06:50 - Installs Kingfisher / Creates ListViewModel / Naming adjusts / Changes coordinator / Creates VM unit tests and adjusts some on Manager / Changes mock json (10 entries)
+- 21:30~23:00 - Creates List View Controller / Fixes pagination implementation / Includes Pull to refresh / Changes listing TableViewCell / Fixes unit tests
+
+
+### Total: 7h 10m

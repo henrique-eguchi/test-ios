@@ -10,14 +10,14 @@ import Moya
 protocol RedditNetworkable {
     var provider: MoyaProvider<RedditAPI> { get }
     
-    func listTopEntries(offset: Int, limit: Int, completion: @escaping (Result<RedditList, Error>) -> ())
+    func listTopEntries(limit: Int, after: String, offset: Int?, completion: @escaping (Result<RedditList, Error>) -> ())
 }
 
 class RedditNetworkManager: RedditNetworkable {
     var provider = MoyaProvider<RedditAPI>(plugins: [NetworkLoggerPlugin()])
 
-    func listTopEntries(offset: Int, limit: Int, completion: @escaping (Result<RedditList, Error>) -> ()) {
-        request(target: .top(offset: offset, limit: limit), completion: completion)
+    func listTopEntries(limit: Int, after: String, offset: Int?, completion: @escaping (Result<RedditList, Error>) -> ()) {
+        request(target: .top(limit: limit, after: after, offset: offset), completion: completion)
     }
     
 }

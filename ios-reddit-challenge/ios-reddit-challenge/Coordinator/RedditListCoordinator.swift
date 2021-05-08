@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class RedditListCoordinator: Coordinator {
     var navigationController: UINavigationController
@@ -19,9 +20,13 @@ class RedditListCoordinator: Coordinator {
     func start() {
         let redditListViewController = RedditListViewController.instantiate()
 
-        let redditTopEntriesListViewModel = RedditTopEntriesListViewModel(networkManager: RedditNetworkManager())
-        redditTopEntriesListViewModel.topEntriesFetchingDelegate = redditListViewController
+        let networkManager = RedditNetworkManager()
         
+        let redditTopEntriesListViewModel = RedditTopEntriesListViewModel(networkManager: networkManager)
+        redditListViewController.viewModel = redditTopEntriesListViewModel
+        redditListViewController.title = "Top entries"
+
+        redditTopEntriesListViewModel.topEntriesFetchingDelegate = redditListViewController
         redditTopEntriesListViewModel.topEntriesNavigationDelegate = self
 
         self.redditListViewController = redditListViewController
